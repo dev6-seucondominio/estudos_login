@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+
+  database: <%= ENV['POSTGRES_DATABASE'] %>
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+
+development:
+  <<: *default
+
+# production:
+#   <<: *default
+#   database: estudos_login_production
+#   username: estudos_login
+#   password: <%= ENV['ESTUDOS_LOGIN_DATABASE_PASSWORD'] %>
