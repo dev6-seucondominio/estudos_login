@@ -27,6 +27,13 @@ a {
   color: inherit;
 }
 
+nav ul {
+  list-style-type: none;
+  display: -webkit-inline-box;
+  margin: 0;
+  padding: 0;
+}
+
 .clear {
   clear: both;
 }

@@ -7,13 +7,17 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div>
-      <ul>
-        <li><%= link_to "Log In", log_in_path %></li>
-        <li><%= link_to "Log Out", log_out_path %></li>
+    <nav style="background: rgba(0, 0, 0, .1); overflow: auto; padding: 0 .5em;">
+      <ul style="float: right;">
+        <% if current_user %>
+          <li style="background: rgba(0,0,0,.1); padding: .5em; margin-left: .1em"><%= link_to "Log Out", log_out_path %></li>
+        <% else %>
+          <li style="background: rgba(0,0,0,.1); padding: .5em"><%= link_to "Log In", log_in_path %></li>
+        <% end %>
       </ul>
-    </div>
-    <div style="width: 70%; margin: 1em auto; padding: 0.5em; background: rgba(0,0,0,.1); border-radius: 0.2em;">
+    </nav>
+    <div class="clear"></div>
+    <div style="width: 70%; margin: .3em auto 1em auto; padding: 0.5em; background: rgba(0,0,0,.1); border-radius: 0.2em;">
       <%= yield %>
     </div>
   </body>
