@@ -7,6 +7,12 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+    <div>
+      <ul>
+        <li><%= link_to "Log In", log_in_path %></li>
+        <li><%= link_to "Log Out", log_out_path %></li>
+      </ul>
+    </div>
     <div style="width: 70%; margin: 1em auto; padding: 0.5em; background: rgba(0,0,0,.1); border-radius: 0.2em;">
       <%= yield %>
     </div>
