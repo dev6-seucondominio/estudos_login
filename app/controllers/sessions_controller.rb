@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
+  skip_before_filter :verificar_autentificacao
+
   def new
-    redirect_to root_url if session[:user_id]
+    return redirect_to root_url if session[:user_id]
+    layout_erp
   end
 
   def create
@@ -16,6 +19,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Logged out!"
+    redirect_to root_url
   end
 end
