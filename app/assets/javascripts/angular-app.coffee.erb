@@ -1,4 +1,5 @@
 angular.module 'PersonalManagementCtr', [
+  'ngResource'
   'ngRoute'
 ]
 
@@ -16,7 +17,7 @@ angular.module 'PersonalManagementCtr', [
       controller: 'Home::IndexCtrl'
     .when '/log_in',
       templateUrl: "<%= asset_path('sessions/new.html') %>"
-      controller: 'Home::IndexCtrl'
+      controller: 'Sessions::IndexCtrl'
 ]
 
 .controller 'AppCtrl', [

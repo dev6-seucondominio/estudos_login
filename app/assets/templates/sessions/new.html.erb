@@ -1,23 +1,20 @@
-<div>
-  <p style="text-align: center">Login</p>
+<p style="text-align: center">Login</p>
+
+<div class="clear"></div>
+
+<form ng-submit="sessionsCtrl.create()" ng-init="sessionsCtrl.init()" style="text-align: center">
+  <div style="margin-top: 1em">
+    <p style="text-align: center">
+      <b style="margin-right: .6em">Email:</b>
+      <input type="text" ng-model='sessionsCtrl.params.email'>
+    </p>
+    <p style="text-align: center">
+      <b style="margin-right: .6em">Password:</b>
+      <input type="password" ng-model='sessionsCtrl.params.password'>
+    </p>
+  </div>
 
   <div class="clear"></div>
 
-  <%= form_tag sessions_path do %>
-    <div style="margin-top: 1em">
-      <p style="text-align: center">
-        <b style="margin-right: .6em">Email:</b>
-        <%= text_field_tag :email, params[:email] %>
-      </p>
-      <p style="text-align: center">
-        <b style="margin-right: .6em">Password:</b>
-        <%= password_field_tag :password, params[:password] %>
-      </p>
-    </div>
-
-    <div class="clear"></div>
-
-    <p style="text-align: center"><%= submit_tag "Log in" %></p>
-  <% end %>
-
-</div>
+  <button type="submit">Log in</button>
+</form>
