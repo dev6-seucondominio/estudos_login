@@ -3,10 +3,12 @@ class User < ActiveRecord::Base
 
   def self.authenticate(email, password)
     user = find_by_email(email)
-    return unless user.present?
+    return :invalid_email unless user.present?
 
     confirm_password = user.password_hash == ::BCrypt::Engine.hash_secret(password, user.password_salt)
-    user if confirm_password
+    return :invalid_password unless confirm_password
+
+    [:success, user]
   end
 
   private

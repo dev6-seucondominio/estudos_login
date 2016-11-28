@@ -6,9 +6,13 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def options
+    { user: current_user }
+  end
+
   def verificar_autentificacao
     if current_user
-      render root_url
+      layout_erp
     else
       redirect_to :log_in
     end

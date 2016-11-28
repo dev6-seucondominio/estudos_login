@@ -10,6 +10,7 @@
     <nav style="background: rgba(0, 0, 0, .1); overflow: auto; padding: 0 .5em;">
       <ul style="float: right;">
         <% if current_user %>
+          <li style="background: rgba(0,0,0,.1); padding: .5em; margin-left: .1em"><%= link_to "Home", root_path %></li>
           <li style="background: rgba(0,0,0,.1); padding: .5em; margin-left: .1em"><%= link_to "Log Out", log_out_path %></li>
         <% else %>
           <li style="background: rgba(0,0,0,.1); padding: .5em"><%= link_to "Log In", log_in_path %></li>
