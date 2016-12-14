@@ -4,8 +4,6 @@ angular.module 'PersonalManagementCtr'
   '$scope'
   'Sessions'
   ($s, Sessions)->
-    console.log 'Sessions::IndexCtrl'
-
     $s.sessionsCtrl =
       init: ->
         @params =
@@ -31,7 +29,7 @@ angular.module 'PersonalManagementCtr'
 
         Sessions.create @params,
           (data)->
-            console.log data
+            window.location.reload()
           (response)->
             alert(response)
 ]

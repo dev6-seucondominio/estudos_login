@@ -2,4 +2,38 @@
   <p style="text-align: center">
     Welcome this page!
   </p>
+
+  <div style="margin-top: 1em">
+    <p style="margin: 0; text-align: center">
+      New People
+    </p>
+    <div style="margin: .3em 0; background: rgba(255, 255, 255, 0.5); padding: .4em">
+      <form ng-submit="formPerson.addPeople()" style="display: -webkit-box;">
+        <div style="width: 25%; margin: 0">
+          <div>Name: </div>
+          <input ng-model="formPerson.params.name" />
+        </div>
+        <div style="width: 25%; margin: 0">
+          <div>Age: </div>
+          <input type="number" ng-model="formPerson.params.age" />
+        </div>
+        <div style="width: 25%; margin: 0">
+          <div>Birthday: </div>
+          <input type="date" ng-model="formPerson.params.birthday" />
+        </div>
+        <div style="text-align: center; width: 25%; margin: 0">
+          <button style="margin-top: 1em;">Adicionar</button>
+        </div>
+      </form>
+    </div>
+
+    <p style="text-align: center">
+      People List
+    </p>
+    <div ng-repeat="person in people" style="margin: .3em 0; background: rgba(255, 255, 255, 0.5); padding: .4em">
+      <p style="margin: 0"><b>Name: </b> {{person.name}}</p>
+      <p style="margin: 0"><b>Age: </b> {{person.age}}</p>
+      <p style="margin: 0"><b>Birthday: </b> {{person.birthday | date: 'dd/MM/yyyy'}}</p>
+    </div>
+  </div>
 </div>

@@ -8,18 +8,17 @@
   </head>
   <body>
     <nav style="background: rgba(0, 0, 0, .1); overflow: auto; padding: 0 .5em;">
-      <ul style="float: right;">
+      <ul>
         <% if current_user %>
-          <li style="background: rgba(0,0,0,.1); padding: .5em; margin-left: .1em"><%= link_to "Home", root_path %></li>
-          <li style="background: rgba(0,0,0,.1); padding: .5em; margin-left: .1em"><%= link_to "Log Out", log_out_path %></li>
+          <li style="cursor: pointer; background: rgba(0,0,0,.1); padding: .5em; margin-left: .1em" ng-click="menu.openAngularPeople()">Home Angular</li>
+          <li style="cursor: pointer; background: rgba(0,0,0,.1); padding: .5em; margin-left: .1em" ng-click="menu.logOut()">Log Out</li>
         <% else %>
-          <li style="background: rgba(0,0,0,.1); padding: .5em"><%= link_to "Log In", log_in_path %></li>
+          <li style="cursor: pointer; background: rgba(0,0,0,.1); padding: .5em" ng-click="menu.logIn()">Log In</li>
         <% end %>
       </ul>
     </nav>
     <div class="clear"></div>
     <div style="width: 70%; margin: .3em auto 1em auto; padding: 0.5em; background: rgba(0,0,0,.1); border-radius: 0.2em;">
       <ng-view></ng-view>
-    </div>
   </body>
 </html>
